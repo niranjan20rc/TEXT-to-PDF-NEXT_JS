@@ -2,14 +2,14 @@
 import { useState } from "react";
 import jsPDF from "jspdf";
 
-const TextToPDF: React.FC = () => {
-  const [text, setText] = useState<string>("");
-  const [fileName, setFileName] = useState<string>("document.pdf");
-  const [pdfUrl, setPdfUrl] = useState<string>("");
-  const [showPreview, setShowPreview] = useState<boolean>(false);
-  const [alertVisible, setAlertVisible] = useState<boolean>(false);
+const TextToPDF = () => {
+  const [text, setText] = useState("");
+  const [fileName, setFileName] = useState("document.pdf");
+  const [pdfUrl, setPdfUrl] = useState("");
+  const [showPreview, setShowPreview] = useState(false);
+  const [alertVisible, setAlertVisible] = useState(false);
 
-  const generatePDF = (): void => {
+  const generatePDF = () => {
     if (!text.trim()) {
       setAlertVisible(true);
       setTimeout(() => setAlertVisible(false), 2000);
@@ -39,7 +39,7 @@ const TextToPDF: React.FC = () => {
     setShowPreview(true);
   };
 
-  const handleDownload = (): void => {
+  const handleDownload = () => {
     if (!text.trim()) {
       setAlertVisible(true);
       setTimeout(() => setAlertVisible(false), 2000);
@@ -116,9 +116,7 @@ const TextToPDF: React.FC = () => {
       <textarea
         rows={10}
         value={text}
-        onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
-          setText(e.target.value)
-        }
+        onChange={(e) => setText(e.target.value)}
         placeholder="Enter your text here..."
         style={{
           padding: "10px",
