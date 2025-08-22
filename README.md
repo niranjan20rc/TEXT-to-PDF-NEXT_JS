@@ -19,7 +19,7 @@ A simple **Next.js** application that allows users to convert text into a downlo
 - [Next.js](https://nextjs.org/)
 - [React](https://reactjs.org/)
 - [jsPDF](https://github.com/parallax/jsPDF)
-- CSS (or Tailwind CSS if preferred)
+
 
 ---
 
