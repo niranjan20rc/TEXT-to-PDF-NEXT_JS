@@ -24,7 +24,7 @@ const TextToPDF: React.FC = () => {
     const lines = doc.splitTextToSize(text, 180);
 
     let y = margin;
-    lines.forEach((line:any) => {
+    lines.forEach((line) => {
       if (y > pageHeight - margin) {
         doc.addPage();
         y = margin;
